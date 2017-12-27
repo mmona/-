@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css" />
+	<script src='js/jquery.min.js'></script>
+<title>注册</title>
+</head>
+<body>
+	<form id="userform" action="#" onsubmit="return false">
+		<div class="container">
+			<div class="form-group">
+				<label>用户名：</label>
+				<input type="text" name="user.userName"  class="form-control" required/>
+			</div>
+			<div class="form-group">
+				<label>密码：</label>
+				<input type="password" name="user.password" class="form-control" required/>
+			</div>
+			<div class="form-group">
+				<label>年龄</label>
+				<input type="number" name="user.age" class="form-control" required/>
+			</div>
+			<div class="form-group">
+				<label>性别</label>
+				<select name="user.sex" class="form-control" >
+					<option>男</option>
+					<option>女</option>
+				</select>
+			</div>
+            <div class="form-group">
+                <label>年龄</label>
+                <input type="number" name="user.identity" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                <label>年龄</label>
+                <input type="number" name="user.alipay" class="form-control" required/>
+            </div>
+			<div class="form-group">
+				<label>性别</label>
+				<select name="user.userType" class="form-control" >
+					<option value="0">普通用户</option>
+					<option value="1">管理员</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label>职业</label>
+				<input type="text" name="user.job" class="form-control" required/>
+			</div>
+			<div>
+				<button class="btn btn-primary" onclick="register()" >立即注册</button>
+				<button class="btn btn-primary" type="reset" >重置</button>
+			</div>
+		</div>
+	</form>
+<script>
+    function register(){
+        var flag=false;
+        $.ajax({
+            type: "POST",
+            url:"register",
+            async: false,
+            data:$('#userform').serialize(),// 序列化表单值
+            error: function(request) {
+                window.location.href="login.html"
+            },
+            success: function(data) {
+                window.location.href="login.html"
+            }
+        });
+    }
+</script>
+</body>
+</html>

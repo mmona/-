@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src='js/jquery.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse top site-navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <h3 style="color: #fff" >公益捐助平台</h3>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <div class="bs-example  col-md-9" data-example-id="simple-carousel" >
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item">
+                    <img data-src="holder.js/900x500/auto/#777:#555/text:First slide" alt="First slide [900x500]" src="image/image1.jpg" data-holder-rendered="true">
+                </div>
+                <div class="item active">
+                    <img data-src="holder.js/900x500/auto/#666:#444/text:Second slide" alt="Second slide [900x500]" src="image/image2.jpg" data-holder-rendered="true">
+                </div>
+                <div class="item">
+                    <img data-src="holder.js/900x500/auto/#555:#333/text:Third slide" alt="Third slide [900x500]" src="image/image3.jpg" data-holder-rendered="true">
+                </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+<div class="bs-example  col-md-3">
+    <!--<h3 class="text-center">请登录</h3>-->
+    <form class="form-horizontal"  id="userform" method="post" action="login" >
+        <div id="error"></div>
+        <div class="form-group">
+            <label for="inputEmail3" class="control-label">用户名</label>
+            <div class="">
+                <input type="text" class="form-control" id="inputEmail3" name="user.userName" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="content" class="control-label">密码</label>
+            <div class="">
+                <input class="form-control" id="content" rows="3" type="password" name="user.password" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="">
+                <a onclick="login()"  href="#"  class="btn btn-default">立即登录</a>
+                <a href="toRegister" class="btn btn-default">没有账号？注册</a>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+<script>
+   function login(){
+       var flag=false;
+       $.ajax({
+           type: "POST",
+           url:"login",
+           async: false,
+           data:$('#userform').serialize(),// 序列化表单值
+           error: function(request) {
+               debugger
+               window.location.href="http://localhost:8080"
+           },
+           success: function(data) {
+               debugger
+               if(data.trim()=='fail'){
+                    $('#error').text("用户名或密码错误");
+               }else{
+                   window.location.href="main.html";
+                   //location.reload();
+                   return true;
+               }
+
+           }
+       });
+           return false;
+   }
+
+</script>
+</body>
+</html>

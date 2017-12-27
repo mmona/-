@@ -1,0 +1,28 @@
+.thumbnail{
+	min-height: 80px;
+	margin: 10px;
+}
+body{
+    background-color: #eee;
+}
+.items-gallery li {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+.items-gallery li {
+    border-radius: 0.25em;
+    background: #fff;
+    margin-bottom: 2em;
+}
+.item-img {
+    height: 0;
+    padding-bottom: 67%;
+    background: transparent;
+}
+.item-info {
+    width: 100%;
+    padding: 1em;
+    border-radius: 0 0 .25em .25em;
+}
+ol, ul {
+    list-style: none;
+}

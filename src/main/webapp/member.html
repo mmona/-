@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="css/payment.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="js/jquery.min.js"></script>
+<script language="JavaScript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+</head>
+<body>
+<div class="container" id="app">
+
+<div class="tiptitle"><h1 >会员管理</h1></div>
+
+  
+<div class="row" >
+  <div class="col-md-4">
+
+    <div class="input-group">
+
+      <input type="text" class="form-control" id="username" placeholder="输入订单号/身份证号">
+      <span class="input-group-btn">
+        <button class="btn btn-default btn-color" type="button" onclick="search()">查询</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+<table class="table table-hover table-bordered" id="table">
+<thead>
+	<th>序号</th>
+	<th>姓名</th>
+	<th>年龄</th>
+	<th>性别</th>
+	<th>工作</th>
+	<th>创建时间</th>
+    <th>操作</th>
+</thead>
+<tbody>
+		<tr v-for="todo in todos">
+		<td><input type="checkbox" id="check" value=""></td>
+		<td>{{todo.userName}}</td>
+		<td>{{todo.age}}</td>
+		<td>{{todo.sex}}</td>
+		<td>{{todo.job}}</td>
+		<td>{{todo.crateTime}}</td>
+        <td><a href="#" v-on:click="del(todo.uid)">删除</a>
+			<a v-bind:href="'updateUser?id='+todo.uid" >修改</a>
+		</td>
+	</tr>
+</tbody>
+</table>
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            todos: [
+                { text: '学习 JavaScript' },
+                { text: '学习 Vue' },
+                { text: '整个牛项目' }
+            ]
+        },
+        // 在 `methods` 对象中定义方法
+        methods: {
+            del: function (uid) {
+                $.get( "deleteUser?id="+uid, function( data ) {
+                    debugger
+                    location.reload();
+                });
+            }
+        }
+    })
+    $(document).ready(function(){
+        $.get( "queryUserList", function( data ) {
+            debugger
+            data= JSON.parse(data);
+            app.todos=data;
+        });
+    });
+    function  search(){
+        debugger
+		var username=$('#username').val()
+        $.get( "queryUserList?user.userName="+username, function( data ) {
+            debugger
+            data= JSON.parse(data);
+            app.todos=data;
+        });
+    }
+</script>
+
+</body>
+</html>

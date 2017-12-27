@@ -1,0 +1,43 @@
+ span {
+    background: #86b0cd;
+    color: #fff;
+    font-size: 52px;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 110px;
+}
+.qm-shangpin:before {
+    content: "\e64c";
+}
+body{
+	    background-image: linear-gradient(to bottom,#2d2c41  0,#fff 100%);
+    background-repeat: repeat-x;
+    
+    color: #fff;
+    font-family: "微软雅黑";
+    /*box-sizing: border-box;*/
+    /*min-height: 100%;*/
+}
+.f-18 {
+    font-size: 18px;
+    line-height: 24px;
+}
+.text-light {
+    color: #FFF!important;
+    font-weight: bold;
+}
+.col-md-3{
+	margin-top: 20%;
+	cursor: pointer;
+}
+p{
+	margin-left: 10px;
+	margin-top: 5px;
+
+}
+.bottom{
+	margin-top: 602px;
+}
+a{
+    color: #fff;
+}

@@ -1,0 +1,27 @@
+body{
+	background-color: #eee;
+}
+
+form {
+	float: left;
+	clear: left;
+}
+ul {
+	list-style: none;
+}
+
+.left{
+	float: left;
+	clear: left;
+	border-right:2px solid #000;
+
+}
+.box{
+	margin-top: 90px;
+}
+.condition{
+	margin-top: 30px;
+}
+.row{
+	margin-top: 10px;
+}

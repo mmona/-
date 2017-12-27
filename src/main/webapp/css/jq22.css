@@ -1,0 +1,36 @@
+#login .loginform {
+    margin-top: 0;
+    top: 100px;
+}
+#login .loginform, #register .loginform {
+    margin-top: 120px;
+    position: relative;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    position: relative;
+    max-width: 400px;
+    padding: 0;
+}
+#login .loginform .pad, #register .loginform .pad {
+    overflow: hidden;
+    padding: 30px;
+}
+#login .loginform .form-actions, #register .loginform .form-actions {
+    border-top: 1px solid #e4e4e4;
+    background-color: #f7f7f7;
+    padding: 15px 30px;
+    text-align: right;
+}
+
+body{ 
+background:url(../images/bg-header-star.jpg); 
+background-position:center; 
+background-repeat:no-repeat; 
+} 
+.glyphicon{
+  padding: 5px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+

@@ -1,0 +1,55 @@
+﻿.top{
+	background-color: #cf4646;
+}
+h1{
+	color: #fff;
+	float: left;
+	margin:2px; 
+}
+h3{
+	color: #337ab7;
+	float: left;
+	font-weight: bold;
+}
+.form-inline{
+	border-top: solid 2px #d9534f;
+}
+.form-group{
+	margin-top: 25px;
+}
+h4{
+	float: right;
+	color: #fff;
+}
+ul{
+	list-style: none;
+}
+body{
+	background-color: #eee;
+}
+.btngroup{
+	float: right;
+	margin-top: 15px;
+}
+.navbar-inverse{
+	    border-color: transparent;
+	    color: #e8e8e8;
+}
+.site-navbar .navbar-nav {
+    float: right!important;
+
+}
+.navbar-inverse .navbar-brand {
+	font-size: 30px;
+    color: #fff;
+    margin-top: -5px;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;	
+    }
+
+.glyphicon {
+  
+ 
+     line-height: 20px; 
+}

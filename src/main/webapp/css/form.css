@@ -1,0 +1,15 @@
+textarea {
+	width: 90%;
+	margin: 10px;
+}
+form{
+	padding: 10px;
+
+}
+input{
+	margin: 10px;
+
+}
+label{
+	text-align: right;
+}

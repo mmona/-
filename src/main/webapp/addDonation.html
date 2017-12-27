@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css" />
+<title>发布求助信息</title>
+</head>
+<body>
+<div class="container">
+	<h3>新增捐款</h3>
+	<form class="form-horizontal" action="addDonation" method="post">
+		<div class="form-group">
+			<label for="donationType" class="col-sm-2 control-label">捐款类型</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="donationType" name="donation.donationType">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="donationMoney" class="col-sm-2 control-label">捐款金额</label>
+			<div class="col-sm-10">
+				<input class="form-control" id="donationMoney" type="number" name="donation.donationMoney" >
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="donationUser" class="col-sm-2 control-label">捐款人</label>
+			<div class="col-sm-10">
+				<input class="form-control" id="donationUser"  name="donation.donationUser" >
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="donationReceiver" class="col-sm-2 control-label">收款人</label>
+			<div class="col-sm-10">
+				<input class="form-control" id="donationReceiver"  name="donation.donationReceiver" >
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="donationTime" class="col-sm-2 control-label">捐款时间</label>
+			<div class="col-sm-10">
+				<input class="form-control" id="donationTime"  type="date" name="donation.donationTime" >
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" class="btn btn-default">立即发布信息</button>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>
